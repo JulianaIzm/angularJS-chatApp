@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="todoContainer/todoContainer.css">
+</head>
+<body >
+    <div class="todoList" ng-controller="todoCtrl" ng-init="getTodos()">
+        <div class="date">
+            <div class="date__details">
+                <span class="day">{{date | date:"dd"}}</span>
+                <div class="monthYear">
+                    <p>{{month}}</p>
+                    <p>{{date | date:"yyyy"}}</p>
+                </div>
+            </div>
+            <p class="date__details">{{day}}</p>
+        </div>
+        <div class="todoListApp">
+            <h3 class="todoListApp__header">Todo App</h3>
+        
+            <div class="todoListApp__addTodo">
+                <add-todo class="addTodo" set-current-text='setCurrentText' send='send' ng-keydown="$event.keyCode === 13 && inputText !== '' && send(inputText)"></add-todo>
+                <!-- <button class="todoList__btn addBtn"  ng-click="send(inputText)"><i class="fas fa-plus" ></i></button> -->
+            </div>
+    
+            <div class="todoListApp__tasks" auto-scroll>
+                <ul>
+                    <li class='tasksToDo' x-lvl-draggable="true" drag="message" on-drop-success="dropSuccessHandler($index, messages)" ng-repeat="message in messages track by $index">{{message}}<i class="far fa-trash-alt deleteTodo" ng-click="dropSuccessHandler($index, messages)"></i></li>
+                </ul>
+            </div>
+    
+            <div class="done" auto-scroll>
+                <h3>Done!</h3>
+                <ul drop-target="onDrop($data, readyTasks)">
+                    <li class="dragDrop" ng-repeat="t in readyTasks track by $index" drop-target="true"></li>
+                </ul>
+            </div>
+    
+            <div class="todoListApp__footer">
+                <span>You have {{messages.length}} pending tasks</span>
+                <button class="todoListApp__btn clearBtn" ng-click="clean()">Clear All</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+.todoList {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  width: 350px;
+}
+
+.date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  height: 120px;
+  position: relative;
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5x;
+  background: url(../images/gora-500x353.jpg) no-repeat center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.date::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.date .date__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  margin: 0 10px;
+}
+
+.date .date__details .day {
+  font-size: 46px;
+}
+
+.date .date__details .monthYear {
+  font-size: 16px;
+}
+
+.date .date__details p {
+  margin: 0 10px;
+}
+
+.todoListApp {
+  padding: 10px 15px;
+}
+
+.todoListApp__header {
+  font-size: 24px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.todoListApp__addTodo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.addTodo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.todoListApp__input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 32px;
+  text-indent: 10px;
+  width: 100%;
+}
+
+.todoListApp__input:focus {
+  outline: none;
+}
+
+.todoListApp__btn {
+  text-decoration: none;
+  outline: none;
+  background-image: linear-gradient(45deg, #6ab1d7 0%, #33d9de 50%, #002878 100%);
+  background-position: 99% 0;
+  background-size: 200% 200%;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 12px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07);
+  -webkit-transition: background-position 0.5s;
+  transition: background-position 0.5s;
+}
+
+.todoListApp__btn:hover {
+  background-position: 0 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #0cf2e3;
+  color: #fff;
+}
+
+.todoListApp__btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.addBtn {
+  margin-left: 3px;
+}
+
+.todoListApp__tasks {
+  height: 100px;
+  max-height: 150px;
+  width: 100%;
+  overflow-y: auto;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.todoListApp__tasks ul {
+  padding: 0;
+  margin: 0;
+}
+
+.tasksToDo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #caabf8;
+  font-size: 20px;
+  width: 100%;
+  margin: 4px 0;
+  text-indent: 7px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.deleteTodo {
+  background-color: #fff;
+  color: #5b4f6d;
+  text-indent: 0;
+  padding: 4px 10px;
+  border: 1px solid #caabf8;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  cursor: pointer;
+}
+
+.done h3 {
+  margin: 0;
+}
+
+.done ul {
+  padding: 0;
+  margin: 0;
+}
+
+.done .dragDrop {
+  min-height: 100px;
+  list-style-type: none;
+}
+
+.doneTask {
+  background-color: #17b92c;
+  font-size: 20px;
+  height: 32px;
+  width: 100%;
+  margin: 4px 0;
+  text-indent: 7px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.todoListApp__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.clearBtn {
+  overflow: hidden;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.lvl-over {
+  /* applied to a drop target when a draggable object is over it */
+  border: 2px dashed black !important;
+}
+
+.lvl-target {
+  /* applied to all drop targets when a drag operation begins, used to indicate drop targets on a page */
+  background-color: #ddd;
+  opacity: .5;
+}
+
+.slot {
+  margin-right: 2px;
+  margin-top: 2px;
+  height: 50px;
+  display: inline-block;
+  border: none;
+}
+/*# sourceMappingURL=todoContainer.css.map */

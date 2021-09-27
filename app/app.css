@@ -1,25 +1,22 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.menu:before {
-  content: "[";
+body {
+  height: 100vh;
+  background: #63d8d0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0cf2e3), color-stop(42%, #5ab9d7), to(#4a7fe5));
+  background: linear-gradient(180deg, #0cf2e3 0%, #5ab9d7 42%, #4a7fe5 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
+/*# sourceMappingURL=app.css.map */
