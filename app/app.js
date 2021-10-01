@@ -3,7 +3,6 @@ angular.module('myApp', [
   'myApp.todoContainer',
   'myApp.dragdrop',
   'myApp.addTodo',
-  'myApp.lvl.services',
   'myApp.view2',
   'myApp.version'
 ]).

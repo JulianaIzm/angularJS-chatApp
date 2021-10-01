@@ -37,7 +37,7 @@
             <div class="done" auto-scroll>
                 <h3>Done!</h3>
                 <ul drop-target="onDrop($data, readyTasks)">
-                    <li class="dragDrop" ng-repeat="t in readyTasks track by $index" drop-target="true"></li>
+                    <li class="dragDrop" ng-repeat="t in readyTasks track by $index" drop-target="true">{{t}}</li>
                 </ul>
             </div>
     

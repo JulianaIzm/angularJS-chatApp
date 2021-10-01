@@ -30,7 +30,7 @@ angular.module('myApp.todoContainer', ['myApp.dragdrop'])
   };
 
   $scope.messages = [];
-  $scope.readyTasks = [{}];
+  $scope.readyTasks = [];
   
   $scope.send = function(text) {
     $scope.messages.push(text);
@@ -68,7 +68,7 @@ angular.module('myApp.todoContainer', ['myApp.dragdrop'])
 
   $scope.clean = function() {
     $scope.messages = [];
-    $scope.readyTasks = [{}];
+    $scope.readyTasks = [];
     $window.localStorage.clear();
   };
 
