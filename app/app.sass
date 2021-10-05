@@ -1,0 +1,63 @@
+$primary-color: #CB6EF2;
+$secondary-color: #FF00CC;
+$third-color: #fff;
+$messageBorder: #25B5FF;
+$font: 'Open Sans', Verdana, sans-serif;
+
+body
+    background-color: #ffe6e6
+
+html
+    width: 100%
+    height: 100%
+
+#chat-icon
+    position: fixed
+    right: 15px
+    bottom: 15px
+    width: 100px
+    height: 100px
+    line-height: 100px
+    text-align: center
+    background-color: $primary-color
+    border: none
+    border-radius: 50%
+    color: $third-color
+    box-shadow: 0 0 15px $secondary-color
+    font-size: 3rem
+    cursor: pointer
+    user-select: none
+
+    &:hover
+        opacity: 0.7
+
+    &:active 
+        border: none 
+        opacity: 0.5
+
+    &:focus 
+        outline: none
+
+#main
+    width: 30%
+    height: 80vh
+    margin: 20px auto
+    border: 4px solid $primary-color
+    border-radius: 20px
+    box-shadow: 0px 0px 15px $secondary-color
+    background-color: $third-color
+    display: flex
+    flex-direction: column
+
+.message-box
+    height: 100%
+    width: 100%
+    resize: none
+    box-sizing: border-box
+    border: 4px solid $messageBorder
+    border-radius: 15px
+    box-shadow: 0px 0px 5px $messageBorder
+    padding: 10px
+    font: 10pt $font
+    color: rgba(0, 0, 0, 0.7)
+    margin-bottom: 50px

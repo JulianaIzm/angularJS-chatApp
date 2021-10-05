@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chatApp/chat/chat.css">
+    <title>Chat</title>
+</head>
+<body>
+    <div id="main">
+        <toolbar change-to-question-button="changeToStartView"></toolbar>
+        <div class="chat" ng-controller='OnChatMessage'>
+            <div class="header">
+                <p class="title">{{title}}</p>
+                <p class="description">{{description}}</p>
+            </div>
+            <div class="message-list">
+                <div ng-class-odd="'msg-item sent'" ng-class-even="'msg-item recieved'" ng-repeat="newMessage in messages track by $index">{{newMessage}}</div>
+            </div>
+
+        <div class="message-input">
+            <message-box placeholder = "placeholder" set-current-text="setCurrentText" ng-keydown="$event.keyCode === 13 && chatText !== '' && send(chatText)"></message-box>
+        </div>
+</div>
+    </div>
+</body>
+</html>

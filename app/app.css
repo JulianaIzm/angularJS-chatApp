@@ -1,22 +1,78 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+body {
+  background-color: #ffe6e6;
 }
 
-body {
-  height: 100vh;
-  background: #63d8d0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0cf2e3), color-stop(42%, #5ab9d7), to(#4a7fe5));
-  background: linear-gradient(180deg, #0cf2e3 0%, #5ab9d7 42%, #4a7fe5 100%);
+html {
+  width: 100%;
+  height: 100%;
+}
+
+#chat-icon {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  background-color: #CB6EF2;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  -webkit-box-shadow: 0 0 15px #FF00CC;
+          box-shadow: 0 0 15px #FF00CC;
+  font-size: 3rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#chat-icon:hover {
+  opacity: 0.7;
+}
+
+#chat-icon:active {
+  border: none;
+  opacity: 0.5;
+}
+
+#chat-icon:focus {
+  outline: none;
+}
+
+#main {
+  width: 30%;
+  height: 80vh;
+  margin: 20px auto;
+  border: 4px solid #CB6EF2;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 15px #FF00CC;
+          box-shadow: 0px 0px 15px #FF00CC;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.message-box {
+  height: 100%;
+  width: 100%;
+  resize: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 4px solid #25B5FF;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 5px #25B5FF;
+          box-shadow: 0px 0px 5px #25B5FF;
+  padding: 10px;
+  font: 10pt "Open Sans", Verdana, sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 50px;
 }
 /*# sourceMappingURL=app.css.map */

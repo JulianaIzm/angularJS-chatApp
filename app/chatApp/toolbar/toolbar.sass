@@ -1,0 +1,36 @@
+$closeColor: #EE5F56;
+$minimizeColor: #F8BD45;
+$expandColor: #5ECB43;
+
+.toolbar
+    line-height: 15px
+    height: 15px
+    padding-left: 10px
+    margin: 10px 0px
+    flex: none
+
+    & .toolbar-button
+        border-radius: 50%
+        width: 19px
+        height: 19px
+        cursor: pointer
+
+        &.close
+            border: 4px solid $closeColor
+            box-shadow: 0px 0px 5px $closeColor
+
+        &.minimize
+            border: 4px solid $minimizeColor
+            box-shadow: 0px 0px 5px $minimizeColor
+            margin-left: 5px
+
+        &.expand
+            border: 4px solid $expandColor
+            box-shadow: 0px 0px 5px $expandColor
+            margin-left: 5px
+
+        &:focus
+            outline: none
+
+        &:hover
+            opacity: 0.7

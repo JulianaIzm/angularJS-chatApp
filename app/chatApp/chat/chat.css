@@ -1,0 +1,81 @@
+.chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 10px 0 10px;
+  height: 100%;
+}
+
+.chat .header {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+
+.chat .header .title {
+  font: 20pt "Open Sans", Verdana, sans-serif;
+  margin: 0px;
+}
+
+.chat .header .description {
+  font: 10pt "Open Sans", Verdana, sans-serif;
+  margin: 0px;
+  opacity: 0.6;
+}
+
+.chat .message-box:focus {
+  outline: none;
+}
+
+.chat .message-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  height: 0px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.chat .message-list .msg-item {
+  max-width: 60%;
+  word-wrap: break-word;
+  margin: 6px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px #A2A2A2;
+          box-shadow: 0px 0px 5px #A2A2A2;
+  padding: 7px;
+  font: 10pt "Open Sans", Verdana, sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.chat .message-list .msg-item.sent {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background-color: #AFFFE6;
+}
+
+.chat .message-list .msg-item.recieved {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  background-color: #FFFCAF;
+}
+
+.chat .message-input {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  height: 50px;
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=chat.css.map */

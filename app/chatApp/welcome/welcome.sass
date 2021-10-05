@@ -1,0 +1,48 @@
+$font: 'Open Sans', Verdana, sans-serif;
+    
+.welcome
+    padding: 0 10px 0 10px
+    min-height: 0
+    height: 100%
+    display: flex
+    flex-direction: column
+
+.welcome 
+    & .header 
+        & .title
+            font: 20pt $font
+            margin-top: 0px
+            margin-right: 50px
+
+    & .start-chat-button
+        width: 100%
+        background-color: green
+        border: 4px solid #5ECB43
+        border-radius: 15px
+        font: 13pt $font
+        color: rgba(228, 233, 237, 1)
+        cursor: pointer
+        padding: 10px 3px
+        flex: 0 0 auto
+        margin-bottom: 10px
+
+        &:hover
+            opacity: 0.7
+
+        &:active
+            opacity: 0.9
+
+        &:focus
+            outline: none
+
+    & .message-box:focus
+        outline: none
+
+    & .message-box-holder
+        height: 100%
+        margin: 10px 0
+
+.start-chat-button 
+    a
+        text-decoration: none
+        color: #fff
