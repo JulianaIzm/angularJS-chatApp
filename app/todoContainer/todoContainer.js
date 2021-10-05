@@ -29,12 +29,12 @@ angular.module('myApp.todoContainer', ['myApp.dragdrop'])
     $scope.inputText = text;
   };
 
-  $scope.messages = [];
+  $scope.tasks = [];
   $scope.readyTasks = [];
   
   $scope.send = function(text) {
-    $scope.messages.push(text);
-    $scope.saveToLS(text);
+    $scope.tasks.push(text);
+    $scope.saveTasksToLS(text);
   };
 
   $scope.todos;
@@ -46,39 +46,57 @@ angular.module('myApp.todoContainer', ['myApp.dragdrop'])
     }
   };
 
-  $scope.saveToLS = function(todo) {
+  $scope.saveTasksToLS = function(todo) {
     $scope.checkLS();
     $scope.todos.push(todo);
     $window.localStorage.setItem('todos', JSON.stringify($scope.todos));
   };
 
-  $scope.getTodos = function() {
+  // this.todos.forEach(function(obj) {
+  //   document.getElementById(obj.container).appendChild(document.getElementById(obj.element));
+  // });
+
+  $scope.getTodos = function($document) {
     $scope.checkLS();
-    $scope.todos.forEach(function(todo) {
-      $scope.messages.push(todo);
+    var nodesArray = Array.prototype.slice.call($scope.tasks);
+
+  var nodesArray = nodesArray.filter( function(e) { 
+    return this.todos.map(function(d) { 
+      return d['element']; }).indexOf(e) === -1; 
+  }).forEach( function(e) { 
+    this.todos.push({'element':e.id, 'container': 'tasks'}); 
+  });
+  this.todos.forEach(function( obj ) {
+    $document.getElementById(obj.container).appendChild($document.getElementById(obj.element));
+    // $scope.todos.forEach(function(todo) {
+    //   $scope.tasks.push(todo);
     });
   };
 
   $scope.removeFromLS = function(todo) {
     $scope.checkLS();
-    var index = $scope.messages.indexOf(todo);
+    var index = $scope.tasks.indexOf(todo);
     $scope.todos.splice(index, 1);
-    $window.localStorage.setItem('todos', JSON.stringify($scope.messages));
+    $window.localStorage.setItem('todos', JSON.stringify($scope.tasks));
   };
 
-  $scope.clean = function() {
-    $scope.messages = [];
+ 
+
+  $scope.clean = function(e) {
+    $scope.tasks = [];
     $scope.readyTasks = [];
     $window.localStorage.clear();
   };
 
   $scope.dropSuccessHandler = function(index,array){
     array.splice(index,1);
-    $scope.removeFromLS();
 };
-  $scope.onDrop = function($data, array){
+  $scope.onDrop = function($data, array, el){
     array.unshift($data);
-    console.log($data);
+    var indexEl = this.todos.map(function(d) { return d['element']; }).indexOf(el.id);
+    if (indexEl>-1)
+      this.todos.splice(indexEl, 1);
+      $window.localStorage.setItem('todos', JSON.stringify(this.todos));
   };
 }])
 

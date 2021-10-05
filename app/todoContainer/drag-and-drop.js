@@ -1,11 +1,16 @@
 "use strict";
 
-angular.module("myApp.dragdrop", [])
+angular.module("myApp.dragdrop", ['myApp.service'])
 
-.directive('lvlDraggable', ['$rootScope', '$parse', function($rootScope, $parse) {
+.directive('lvlDraggable', ['$rootScope', '$parse', 'uuid', function($rootScope, $parse, uuid) {
     return {
         restrict: 'A',
         link: function(scope, el, attrs, controller) {
+            var id = angular.element(el).attr("id");
+            if (!id) {
+                id = uuid.new();
+                angular.element(el).attr("id", id);
+            }
 
             angular.element(el).attr("draggable", "true");
 
@@ -17,6 +22,7 @@ angular.module("myApp.dragdrop", [])
             el.bind("dragstart", function(e) {
                 e.dataTransfer.setData('text', dragData);
                 $rootScope.$emit("LVL-DRAG-START");
+                // console.log('drag start', dragData);
             });
             
             el.on("dragend", function(e) {
@@ -35,10 +41,15 @@ angular.module("myApp.dragdrop", [])
     };
 }])
 
-.directive('dropTarget', ['$rootScope', '$parse', function($rootScope, $parse) {
+.directive('dropTarget', ['$rootScope', '$parse', 'uuid', function($rootScope, $parse, uuid) {
     return {
         restrict: 'A',
         link: function(scope, el, attrs, controller) {
+            var id = angular.element(el).attr("id");
+            if (!id) {
+                id = uuid.new();
+                angular.element(el).attr("id", id);
+            }          
 
             el.bind("dragover", function(e) {
                 if (e.preventDefault) {
@@ -51,7 +62,7 @@ angular.module("myApp.dragdrop", [])
             });
             
             el.bind("dragenter", function(e) {
-              // this / e.target is the current hover target.
+              // this  e.target is the current hover target.
                 angular.element(e.target).addClass('lvl-over');
             });
             
@@ -76,13 +87,13 @@ angular.module("myApp.dragdrop", [])
                 });
             });
 
-            $rootScope.$on("LVL-DRAG-START", function() {
-                angular.element(el).addClass("lvl-target");
+            $rootScope.$on("LVL-DRAG-START", function(e) {
+                angular.element(e.target).addClass("lvl-target");
             });
             
-            $rootScope.$on("LVL-DRAG-END", function() {
-                angular.element(el).removeClass("lvl-target");
-                angular.element(el).removeClass("lvl-over");
+            $rootScope.$on("LVL-DRAG-END", function(e) {
+                angular.element(e.target).removeClass("lvl-target");
+                angular.element(e.target).removeClass("lvl-over");
             });
         }
     };

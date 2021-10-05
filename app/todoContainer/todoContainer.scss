@@ -88,7 +88,6 @@ $primary-color: #8C49E6;
         border-radius: 3px;
         padding: 3px 12px;
         cursor: pointer;
-        // box-shadow: 7px 2px 20px 0 rgba(0,40,120, 0.35);
         box-shadow: 0 1px 1px hsla(0deg, 0%, 0% / 0.075, 0.07),
             0 2px 4px hsla(0deg, 0%, 0% / 0.075, 0.07),
             0 4px 8px hsla(0deg, 0%, 0% / 0.075, 0.07),
@@ -118,19 +117,20 @@ $primary-color: #8C49E6;
             padding: 0;
             margin: 0;
         }
+        & li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #caabf8;
+            font-size: 20px;
+            width: 100%;
+            margin: 4px 0;
+            text-indent: 7px;
+            border-radius: 3px;
+            color: #fff;
+        }
     }
-    .tasksToDo {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #caabf8;
-        font-size: 20px;
-        width: 100%;
-        margin: 4px 0;
-        text-indent: 7px;
-        border-radius: 3px;
-        color: #fff;
-    }
+
     .deleteTodo {
         background-color: #fff;
         color: #5b4f6d;
@@ -147,17 +147,22 @@ $primary-color: #8C49E6;
         }
         & ul {
             padding: 0;
-            margin: 0;
-            min-height: 32px;
+            margin: 0 0 10px 0;
             width: 100%;
+            min-height: 32px;
+            list-style-type: none;
         }
         & li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background-color: #17b92c;
             font-size: 20px;
-            height: 32px;
+            height: 30px;
             width: 100%;
             margin: 4px 0;
             text-indent: 7px;
+            border: none;
             border-radius: 3px;
             color: #fff;
         }

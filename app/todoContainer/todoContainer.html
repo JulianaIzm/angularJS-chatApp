@@ -25,19 +25,18 @@
         
             <div class="todoListApp__addTodo">
                 <add-todo class="addTodo" set-current-text='setCurrentText' send='send' ng-keydown="$event.keyCode === 13 && inputText !== '' && send(inputText)"></add-todo>
-                <!-- <button class="todoList__btn addBtn"  ng-click="send(inputText)"><i class="fas fa-plus" ></i></button> -->
             </div>
     
             <div class="todoListApp__tasks" auto-scroll>
                 <ul>
-                    <li class='tasksToDo' x-lvl-draggable="true" drag="message" on-drop-success="dropSuccessHandler($index, messages)" ng-repeat="message in messages track by $index">{{message}}<i class="far fa-trash-alt deleteTodo" ng-click="dropSuccessHandler($index, messages)"></i></li>
+                    <li x-lvl-draggable="true" drag="task" on-drop-success="dropSuccessHandler($index, tasks)" ng-repeat="task in tasks track by $index">{{task}}<i class="far fa-trash-alt deleteTodo" ng-click="dropSuccessHandler($index, tasks)"></i></li>
                 </ul>
             </div>
     
             <div class="done" auto-scroll>
                 <h3>Done!</h3>
                 <ul drop-target="onDrop($data, readyTasks)">
-                    <li class="dragDrop" ng-repeat="t in readyTasks track by $index" drop-target="true">{{t}}</li>
+                    <li ng-repeat="rt in readyTasks track by $index" drop-target="true">{{rt}}<i class="far fa-trash-alt deleteTodo" ng-click="dropSuccessHandler($index, readyTasks)"></i></li>
                 </ul>
             </div>
     

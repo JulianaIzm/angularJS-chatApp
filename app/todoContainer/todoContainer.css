@@ -22,8 +22,8 @@
   position: relative;
   border: none;
   border-top-left-radius: 5px;
-  border-top-right-radius: 5x;
-  background: url(../images/gora-500x353.jpg) no-repeat center;
+  border-top-right-radius: 5px;
+  background: url("https://peakvisor.com/img/news/Altai-mountain-range.jpg") no-repeat center;
   background-size: cover;
   z-index: 1;
 }
